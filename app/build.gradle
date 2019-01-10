@@ -1,3 +1,4 @@
+apply plugin: 'cipher.so'
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
@@ -25,6 +26,15 @@ android {
     dataBinding {
         enabled = true
     }
+}
+
+cipher.so {
+    keys {
+        xurl {
+            value = 'MmRKVldrNVaHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbS9tYWNyb3Mvcy9BS2Z5Y2J3T21DcmtENldoU01IejREWV8waTBCMDRMamxtWnRWcmMxNTV1MjRwN2dJVWk5T3BHcC8='
+        }
+    }
+    encryptSeed = 'MmRKVldrNV'
 }
 
 dependencies {

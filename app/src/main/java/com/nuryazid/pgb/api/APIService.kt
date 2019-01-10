@@ -3,6 +3,7 @@ package com.nuryazid.pgb.api
 import android.util.Base64
 import com.nuryazid.pgb.BuildConfig
 import io.reactivex.Observable
+import net.idik.lib.cipher.so.CipherClient
 import okhttp3.ResponseBody
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -20,7 +21,7 @@ interface APIService {
     companion object Factory {
 
         fun validate(): String {
-            val data = Base64.decode(BuildConfig.BASE_URL.substring(10), Base64.DEFAULT)
+            val data = Base64.decode(CipherClient.xurl().substring(10), Base64.DEFAULT)
             return String(data, StandardCharsets.UTF_8)
         }
 
